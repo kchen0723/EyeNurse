@@ -13,5 +13,12 @@ namespace EyeNurse
         {
             InitializeComponent();
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Screen Locker", "Screen wll be locked", "Cancel");
+            DependencyService.Register<IScreenLock>();
+            DependencyService.Get<IScreenLock>().Lock();
+        }
     }
 }
