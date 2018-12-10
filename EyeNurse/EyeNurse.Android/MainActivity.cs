@@ -32,7 +32,13 @@ namespace EyeNurse.Droid
             adminIntent.PutExtra(DevicePolicyManager.ExtraDeviceAdmin, adminComponent);
             adminIntent.PutExtra(DevicePolicyManager.ExtraAddExplanation, "Give Screen Lock Permission");
             StartActivity(adminIntent);
-         }
+        }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+            this.LoadApp();
+        }
 
         public void LoadApp()
         {
